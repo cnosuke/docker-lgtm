@@ -7,6 +7,8 @@ RUN apt-get install -y \
   libmagickwand-dev \
   memcached
 
+RUN service memcached start
+
 RUN git clone https://github.com/negipo/lgtm.git /app
 RUN echo "gem 'unicorn'" >> /app/Gemfile
 RUN echo "gem 'dotenv'" >> /app/Gemfile
